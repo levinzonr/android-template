@@ -1,0 +1,42 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion sdks.compileSdkVersion
+    defaultConfig {
+        minSdkVersion sdks.minSdkVersion
+        targetSdkVersion sdks.targetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+
+dependencies {
+
+
+    // Koin for Kotlin
+    implementation "org.koin:koin-core:${versions.koin}"
+    // Koin extended & experimental features
+    implementation "org.koin:koin-core-ext:${versions.koin}"
+    implementation 'com.spotify.android:auth:1.1.0'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+    implementation("com.squareup.retrofit2:retrofit:${versions.retrofit}")
+    implementation("com.squareup.retrofit2:converter-gson:${versions.retrofit}") {
+        exclude module: "retrofit:${versions.retrofit}"
+    }
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+}

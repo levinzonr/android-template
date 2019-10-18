@@ -1,0 +1,74 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+
+android {
+    compileSdkVersion sdks.compileSdkVersion
+    defaultConfig {
+        minSdkVersion sdks.minSdkVersion
+        targetSdkVersion sdks.targetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':data')
+    implementation "com.google.android.material:material:$versions.material"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation "androidx.arch.core:core-common:$versions.archCore"
+    implementation "androidx.arch.core:core-runtime:$versions.archCore"
+    implementation "androidx.lifecycle:lifecycle-livedata-core:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-runtime:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-common:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-extensions:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-livedata:${versions.lifecycle}"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.lifecycle}"
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt "androidx.lifecycle:lifecycle-compiler:${versions.lifecycle}"
+    implementation "androidx.core:core-ktx:${versions.ktx}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutines}"
+
+    // Koin for Android
+    implementation "org.koin:koin-android:${versions.koin}"
+    // Koin Android Scope features
+    implementation "org.koin:koin-android-scope:${versions.koin}"
+    // Koin Android ViewModel features
+    implementation "org.koin:koin-android-viewmodel:${versions.koin}"
+    // Koin Android Experimental features
+    implementation "org.koin:koin-android-ext:${versions.koin}"
+
+    implementation("io.coil-kt:coil:0.7.0")
+
+    implementation 'cz.levinzonr.roxie:sdk:1.4-LOCAL'
+    testImplementation 'junit:junit:4.12'
+    implementation "io.reactivex.rxjava2:rxandroid:${versions.rx_android}"
+    implementation "io.reactivex.rxjava2:rxjava:${versions.rx_java}"
+    implementation "io.reactivex.rxjava2:rxkotlin:${versions.rx_kotlin}"
+    implementation "androidx.core:core-ktx:${versions.ktx}"
+    implementation "net.hockeyapp.android:HockeySDK:${versions.hockey_sdk}"
+    implementation "com.jakewharton.timber:timber:${versions.timber}"
+
+    implementation 'com.spotify.android:auth:1.1.0'
+    implementation "androidx.navigation:navigation-fragment-ktx:${versions.navigation}"
+    implementation "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+}
