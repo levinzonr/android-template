@@ -5,7 +5,6 @@ import cz.levinzonr.spotistats.presentation.navigation.Route
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import timber.log.Timber
 
 class SplashViewModel() : BaseViewModel<Action, Change, State>() {
 

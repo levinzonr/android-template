@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import cz.levinzonr.roxie.BaseState
 import cz.levinzonr.spotistats.presentation.R
 import cz.levinzonr.spotistats.presentation.base.BaseFragment
 import org.koin.android.viewmodel.ext.android.viewModel
