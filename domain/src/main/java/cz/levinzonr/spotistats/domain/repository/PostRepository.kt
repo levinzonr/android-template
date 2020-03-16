@@ -1,4 +1,4 @@
-package cz.levinzonr.spotistats.repositories
+package cz.levinzonr.spotistats.domain.repository
 
 import cz.levinzonr.spotistats.models.Post
 

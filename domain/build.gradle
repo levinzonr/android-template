@@ -23,9 +23,6 @@ android {
 
 }
 dependencies {
-    implementation project(':data')
-
-
     // Koin for Kotlin
     implementation "org.koin:koin-core:${versions.koin}"
     // Koin extended & experimental features

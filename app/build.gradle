@@ -103,6 +103,7 @@ dependencies {
     implementation project (':domain')
     implementation project (':presentation')
     implementation project (':data')
+    implementation project(':roxie-1.0.1')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
     implementation "org.jetbrains.kotlin:kotlin-reflect:${versions.kotlin}"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
@@ -125,7 +126,6 @@ dependencies {
     implementation('com.squareup.okhttp3:logging-interceptor:4.3.1')
 
     implementation "dk.nodes.arch:base:${versions.nodes_arch}"
-    implementation "cz.levinzonr:roxie:${versions.roxie}"
 
     // Koin for Android
     implementation "org.koin:koin-android:${versions.koin}"

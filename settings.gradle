@@ -1,4 +1,4 @@
-include ':app'
+include ':app', ':roxie-1.0.1'
 include ':domain'
 include ':presentation'
 include ':data'

@@ -1,4 +1,4 @@
-package cz.levinzonr.spotistats.models
+package cz.levinzonr.spotistats.domain.models
 
 data class Post(
     var userId: Int,

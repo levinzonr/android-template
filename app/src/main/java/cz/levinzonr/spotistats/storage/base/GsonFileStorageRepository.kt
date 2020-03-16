@@ -2,7 +2,7 @@ package cz.levinzonr.spotistats.storage.base
 
 import android.content.Context
 import com.google.gson.Gson
-import cz.levinzonr.spotistats.repositories.RepositoryException
+import cz.levinzonr.spotistats.domain.repository.RepositoryException
 import timber.log.Timber
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -27,9 +27,9 @@ abstract class GsonFileStorageRepository<T>(
         } catch (e: Exception) {
             e.printStackTrace()
             throw(RepositoryException(
-                -1,
-                null,
-                "file could not be written to internal storage"
+                    -1,
+                    null,
+                    "file could not be written to internal storage"
             ))
         }
     }
@@ -56,9 +56,9 @@ abstract class GsonFileStorageRepository<T>(
         } catch (e: Exception) {
             Timber.e("Catching file not found")
             throw(RepositoryException(
-                -1,
-                null,
-                "File $filename could not be read from internal storage"
+                    -1,
+                    null,
+                    "File $filename could not be read from internal storage"
             ))
         }
     }

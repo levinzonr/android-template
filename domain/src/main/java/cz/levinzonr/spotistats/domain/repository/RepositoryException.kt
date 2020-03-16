@@ -1,4 +1,4 @@
-package cz.levinzonr.spotistats.repositories
+package cz.levinzonr.spotistats.domain.repository
 
 data class RepositoryException(
     val code: Int,

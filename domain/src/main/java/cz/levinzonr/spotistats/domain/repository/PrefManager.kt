@@ -1,4 +1,4 @@
-package cz.levinzonr.spotistats.repositories
+package cz.levinzonr.spotistats.domain.repository
 
 /**
  * Created by bison on 11/10/17.

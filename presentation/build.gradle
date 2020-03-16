@@ -29,7 +29,7 @@ android {
 
 dependencies {
     implementation project(':domain')
-    implementation project(':data')
+    implementation project(':roxie-1.0.1')
     implementation "com.google.android.material:material:$versions.material"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation "androidx.arch.core:core-common:$versions.archCore"
@@ -59,7 +59,6 @@ dependencies {
 
     implementation('io.coil-kt:coil:0.9.1')
 
-    implementation "cz.levinzonr:roxie:${versions.roxie}"
     testImplementation 'junit:junit:4.13'
     implementation "io.reactivex.rxjava2:rxandroid:${versions.rx_android}"
     implementation "io.reactivex.rxjava2:rxjava:${versions.rx_java}"

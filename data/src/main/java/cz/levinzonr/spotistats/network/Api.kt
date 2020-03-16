@@ -1,6 +1,6 @@
 package cz.levinzonr.spotistats.network
 
-import cz.levinzonr.spotistats.models.Post
+import cz.levinzonr.spotistats.domain.models.Post
 import retrofit2.Response
 import retrofit2.http.GET
 
