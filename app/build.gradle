@@ -20,18 +20,13 @@ android {
         targetSdkVersion sdks.targetSdkVersion
         multiDexEnabled true
         versionCode 1
-        versionName "2.0.3"
+        versionName "1.0.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         compileOptions {
             sourceCompatibility 1.8
             targetCompatibility 1.8
         }
-
-        manifestPlaceholders = [
-                appId : keys.appId,
-                apiKey: keys.apiKey
-        ]
 
         packagingOptions {
             pickFirst("META-INF/atomicfu.kotlin_module")
@@ -123,9 +118,7 @@ dependencies {
         exclude module: "retrofit:${versions.retrofit}"
     }
     implementation "com.squareup.okhttp3:okhttp:${versions.okhttp}"
-    implementation('com.squareup.okhttp3:logging-interceptor:4.3.1')
-
-    implementation "dk.nodes.arch:base:${versions.nodes_arch}"
+    implementation('com.squareup.okhttp3:logging-interceptor:4.9.0')
 
     // Koin for Android
     implementation "org.koin:koin-android:${versions.koin}"

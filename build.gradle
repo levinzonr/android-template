@@ -3,45 +3,36 @@
 buildscript {
 
     ext.versions = [
-            kotlin             : '1.3.61',
-            coroutines         : '1.3.3',
+            kotlin             : '1.4.10',
+            coroutines         : '1.3.9-native-mt-2',
             constraint_layout  : '2.0.0-beta2',
             dagger             : "2.24",
-            lifecycle          : "2.1.0",
+            lifecycle          : "2.2.0",
             hockey_sdk         : "5.2.0",
             timber             : "4.7.1",
             junit              : '4.13',
             espresso           : '3.2.0',
-            mockito            : '3.2.4',
-            nodes_nstack_kotlin: '3.0.5',
-            nstack_plugin      : '3.0.3',
-            nodes_arch         : '2.3.5',
-            retrofit           : '2.7.1',
-            okhttp             : '4.3.1',
+            mockito            : '3.5.13',
+            retrofit           : '2.9.0',
+            okhttp             : '4.9.0',
             rx_android         : '2.1.1',
-            rx_java            : '2.2.16',
+            rx_java            : '2.2.20',
             rx_kotlin          : '2.4.0',
             ktx                : "1.0.2",
             rx_lint            : '1.7.0',
             material           : '1.1.0-alpha09',
             archCore           : '2.0.1',
             navigation         : '2.1.0',
-            koin               : '2.0.1',
+            koin               : '2.1.0',
             roxie              : '1.0.0-test'
 
     ]
 
-    ext.keys = [
-            appId       : 'bOdrNuZd4syxuAz6gyCb3xwBCjA8U4h4IcQI',
-            apiKey      : 'X0ENl5QpKI51tS9CzKSt1PGwfZeq2gBMTU58',
-            acceptHeader: "da-DK"
-    ]
-
     ext.sdks = [
-            compileSdkVersion: 28,
-            buildToolsVersion: '28.0.3',
+            compileSdkVersion: 30,
+            buildToolsVersion: '30.0.0',
             minSdkVersion    : 21,
-            targetSdkVersion : 28
+            targetSdkVersion : 30
     ]
 
     repositories {
@@ -51,7 +42,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
         classpath "com.github.gfx.ribbonizer:ribbonizer-plugin:2.1.0"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:${versions.navigation}"
