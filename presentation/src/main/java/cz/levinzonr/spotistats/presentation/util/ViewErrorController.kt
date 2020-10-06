@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.snackbar.Snackbar
-import cz.levinzonr.spotistats.repositories.RepositoryException
+import cz.levinzonr.spotistats.domain.repository.RepositoryException
 
 class ViewErrorController(val context: Context) {
 
