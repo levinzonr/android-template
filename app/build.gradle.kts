@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
+    id("com.google.devtools.ksp") version "1.6.21-1.0.5"
 }
 
 android {
@@ -71,6 +72,10 @@ dependencies {
 
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
     implementation("androidx.navigation:navigation-compose:$navVersion")
+
+    ksp("com.github.levinzonr.compose-safe-routing:processor-ksp:2.5.1")
+    implementation("com.github.levinzonr.compose-safe-routing:core:2.5.1")
+
 
     implementation("com.google.dagger:hilt-android:2.41")
     kapt("com.google.dagger:hilt-android-compiler:2.41")
