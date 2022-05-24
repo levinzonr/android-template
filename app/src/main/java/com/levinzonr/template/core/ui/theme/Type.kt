@@ -1,4 +1,4 @@
-package com.levinzonr.template.core.theme
+package com.levinzonr.template.core.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
