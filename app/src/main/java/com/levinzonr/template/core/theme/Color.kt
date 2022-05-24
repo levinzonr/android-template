@@ -1,4 +1,4 @@
-package com.levinzonr.template.ui.theme
+package com.levinzonr.template.core.theme
 
 import androidx.compose.ui.graphics.Color
 
