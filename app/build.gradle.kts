@@ -60,6 +60,8 @@ dependencies {
     val composeVersion = "1.2.0-beta01"
     val lifecycleVersion = "2.4.1"
     val navVersion = "2.4.2"
+    val ktor_version = "2.0.2"
+
 
     implementation("androidx.core:core-ktx:1.7.0")
 
@@ -79,6 +81,10 @@ dependencies {
 
     implementation("com.google.dagger:hilt-android:2.41")
     kapt("com.google.dagger:hilt-android-compiler:2.41")
+
+    implementation("io.ktor:ktor-client-core:$ktor_version")
+    implementation("io.ktor:ktor-client-cio:$ktor_version")
+    implementation("io.ktor:ktor-client-logging:$ktor_version")
 
     implementation("androidx.activity:activity-compose:1.4.0")
     testImplementation("junit:junit:4.13.2")
