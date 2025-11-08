@@ -88,6 +88,7 @@ dependencies {
 
     implementation(libs.android.lifecycle.runtime.compose)
     implementation(libs.android.datastore.preferences)
+    implementation(libs.google.maps.compose)
 
     // Compose
     implementation(platform(libs.android.compose.bom))
