@@ -1,6 +1,5 @@
 package com.levinzonr.template.android.designsystem.components.apptextfield
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.text.KeyboardActions
@@ -58,7 +57,9 @@ fun AppTextField(
             isError = error != null,
             supportingText = if (error != null) {
                 { Text(text = error) }
-            } else null,
+            } else {
+                null
+            },
         )
     }
 }

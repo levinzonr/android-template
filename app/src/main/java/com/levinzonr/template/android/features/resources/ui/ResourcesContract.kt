@@ -2,6 +2,7 @@ package com.levinzonr.template.android.features.resources.ui
 
 import com.levinzonr.template.android.core.error.ErrorModel
 import com.levinzonr.template.android.features.resources.domain.model.Resource
+import kotlinx.serialization.Serializable
 
 /**
  * UI State that represents ResourcesScreen
@@ -19,3 +20,9 @@ data class ResourcesState(
 data class ResourcesActions(
     val onResourceClick: (Resource) -> Unit = {},
 )
+
+/**
+ * Type-safe destination for Resources feature
+ */
+@Serializable
+data object ResourcesDestination

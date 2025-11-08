@@ -83,8 +83,8 @@ dependencies {
 
     implementation(libs.bundles.android.lifecycle)
 
-    implementation(libs.android.navigation.fragment)
-    implementation(libs.android.navigation.ui)
+    implementation(libs.android.navigation.compose)
+    implementation(libs.hilt.navigation.compose)
 
     implementation(libs.android.lifecycle.runtime.compose)
     implementation(libs.android.datastore.preferences)

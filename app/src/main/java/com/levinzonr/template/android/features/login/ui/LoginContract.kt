@@ -1,6 +1,7 @@
 package com.levinzonr.template.android.features.login.ui
 
 import com.levinzonr.template.android.core.error.ErrorModel
+import kotlinx.serialization.Serializable
 
 /**
  * UI State that represents LoginScreen
@@ -23,3 +24,9 @@ data class LoginActions(
     val onEmailChange: (String) -> Unit = {},
     val onLoginClick: () -> Unit = {},
 )
+
+/**
+ * Type-safe destination for Login feature
+ */
+@Serializable
+data object LoginDestination

@@ -30,7 +30,6 @@ fun AppTopBar(
         navigationIcon = {
             onBackButtonClick?.let { onBackClick ->
                 IconButton(onClick = onBackClick) {
-
                 }
             }
         },

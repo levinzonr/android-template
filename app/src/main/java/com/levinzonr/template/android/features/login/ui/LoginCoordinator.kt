@@ -4,8 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.navigation.NavController
-import androidx.navigation.NavOptions
-import com.levinzonr.template.android.R
+import com.levinzonr.template.android.features.resources.ui.ResourcesDestination
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.launchIn
@@ -26,11 +25,11 @@ class LoginCoordinator(
         viewModel.stateFlow
             .filter { it.isLoggedIn }
             .onEach {
-                navController.navigate(
-                    R.id.resourceFragment,
-                    navOptions = NavOptions.Builder().setPopUpTo(R.id.loginFragment, true).build(),
-                    args = null,
-                )
+                navController.navigate(ResourcesDestination) {
+                    popUpTo(LoginDestination) {
+                        inclusive = true
+                    }
+                }
             }
             .launchIn(scope)
     }
