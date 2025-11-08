@@ -11,10 +11,10 @@ plugins {
 
 
 android {
-    namespace = "com.levinzonr.template.android"
+    namespace = "com.levinzonr.otterfinder"
     flavorDimensions += "default"
     defaultConfig {
-        applicationId = "com.levinzonr.template.android"
+        applicationId = "com.levinzonr.otterfinder"
         versionCode = 1
         versionName = "1.0.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

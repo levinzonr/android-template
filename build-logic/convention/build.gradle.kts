@@ -2,7 +2,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "com.levinzonr.template.android.build-logic"
+group = "com.levinzonr.otterfinder.build-logic"
 
 
 dependencies {
@@ -17,12 +17,12 @@ gradlePlugin {
     plugins {
         register("conventionAndroidLib") {
             id = "convention.android.library"
-            implementationClass = "com.levinzonr.template.android.buildlogic.convention.AndroidLibConventionPlugin"
+            implementationClass = "com.levinzonr.otterfinder.buildlogic.convention.AndroidLibConventionPlugin"
         }
 
         register("conventionAndroidApp") {
             id = "convention.android.application"
-            implementationClass = "com.levinzonr.template.android.buildlogic.convention.AndroidAppConventionPlugin"
+            implementationClass = "com.levinzonr.otterfinder.buildlogic.convention.AndroidAppConventionPlugin"
         }
 
     }

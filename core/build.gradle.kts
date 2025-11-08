@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "com.levinzonr.template.android.core"
+    namespace = "com.levinzonr.otterfinder.core"
     buildFeatures.compose = true
 }
 
