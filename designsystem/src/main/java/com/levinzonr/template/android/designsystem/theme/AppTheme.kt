@@ -1,11 +1,11 @@
 package com.levinzonr.template.android.designsystem.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.Colors
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Shapes
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material3.ColorScheme
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Shapes
+import androidx.compose.material3.darkColorScheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalConfiguration
 import com.levinzonr.template.android.designsystem.theme.dimensions.Dimensions
@@ -30,10 +30,10 @@ fun AppTheme(
     ProvideDimensions(dimensions = dimensions) {
         ProvideAppTypography {
             MaterialTheme(
+                colorScheme = if (isDarkMode) DarkColorScheme else LightColorScheme,
                 typography = Typography,
                 shapes = Shapes,
                 content = content,
-                colors = if (isDarkMode) DarkColors else LightColors,
             )
         }
     }
@@ -46,29 +46,31 @@ fun AppTheme(
  */
 object Theme {
     val typography: AppTypography @Composable get() = LocalAppTypography.current
-    val colors: Colors @Composable get() = MaterialTheme.colors
+    val colors: ColorScheme @Composable get() = MaterialTheme.colorScheme
     val shapes: Shapes @Composable get() = MaterialTheme.shapes
     val dimensions: Dimensions @Composable get() = LocalDimensions.current
 }
 
-private val LightColors = lightColors(
+private val LightColorScheme = lightColorScheme(
     primary = Green,
     onPrimary = Black,
     background = LightGrey,
     onBackground = DarkGrey,
-    onSurface = Black,
     surface = White,
+    onSurface = Black,
     error = Red,
+    onError = White,
 )
 
-private val DarkColors = darkColors(
+private val DarkColorScheme = darkColorScheme(
     primary = Green,
     onPrimary = Black,
     background = DarkGrey,
     onBackground = White,
-    onSurface = White,
     surface = Black,
+    onSurface = White,
     error = Red,
+    onError = White,
 )
 
 @Composable

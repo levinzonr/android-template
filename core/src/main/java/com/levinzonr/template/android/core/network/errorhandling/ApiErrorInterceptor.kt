@@ -34,7 +34,7 @@ class ApiErrorInterceptor @Inject constructor(
         } else {
             val newErrorBody = errorBody?.toResponseBody("application/json".toMediaType())
             Timber.e("Failed to deserialize error body: ${errorDtoResult.exceptionOrNull()}")
-            return response.newBuilder().body(newErrorBody).build()
+            return response.newBuilder().body(newErrorBody!!).build()
         }
     }
 }

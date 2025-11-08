@@ -1,6 +1,6 @@
 package com.levinzonr.template.android.designsystem.theme.typography
 
-import androidx.compose.material.Typography
+import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 
 /**
@@ -19,10 +19,10 @@ data class AppTypography(
 ) {
 
     constructor(typography: Typography) : this(
-        headline1 = typography.h1,
-        headline2 = typography.h2,
-        body1 = typography.body1,
-        body2 = typography.body2,
-        button = typography.button,
+        headline1 = typography.headlineLarge,
+        headline2 = typography.headlineMedium,
+        body1 = typography.bodyLarge,
+        body2 = typography.bodyMedium,
+        button = typography.labelLarge,
     )
 }

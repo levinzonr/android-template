@@ -1,20 +1,18 @@
 package com.levinzonr.template.android.designsystem.components.appbutton
 
 import androidx.compose.animation.Crossfade
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.levinzonr.template.android.designsystem.theme.AppTheme
@@ -42,11 +40,6 @@ fun AppButton(
             modifier = modifier,
             enabled = enabled && !isLoading,
             content = { ButtonContent(text = text, isLoading = isLoading) },
-            colors = ButtonDefaults.outlinedButtonColors(
-                contentColor = Theme.colors.secondary,
-                backgroundColor = Color.Transparent,
-            ),
-            border = BorderStroke(1.dp, Theme.colors.secondary),
         )
 
         AppButtonType.Text -> {
@@ -69,13 +62,11 @@ private fun PrimaryButton(
     enabled: Boolean = false,
     content: @Composable RowScope.() -> Unit,
 ) {
-    val colors = ButtonDefaults.buttonColors()
     Button(
         onClick = onClick,
         modifier = modifier,
         enabled = enabled,
         content = content,
-        colors = colors,
         contentPadding = PaddingValues(vertical = Theme.dimensions.medium2),
     )
 }
@@ -85,9 +76,9 @@ private fun RowScope.ButtonContent(text: String, isLoading: Boolean) {
     Crossfade(targetState = isLoading) {
         if (it) {
             CircularProgressIndicator(
-                color = Theme.colors.primary,
+                color = Theme.colors.onPrimary,
                 modifier = Modifier.size(24.dp),
-                strokeWidth = 1.dp,
+                strokeWidth = 2.dp,
             )
         } else {
             Text(

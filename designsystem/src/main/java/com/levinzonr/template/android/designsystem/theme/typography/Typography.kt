@@ -1,59 +1,94 @@
 package com.levinzonr.template.android.designsystem.theme.typography
 
-import androidx.compose.material.Typography
+import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-val Typography = Typography(
-    defaultFontFamily = FontFamily,
-    h1 = TextStyle(
+val Typography: Typography = Typography(
+    displayLarge = TextStyle(
         fontWeight = FontWeight.Bold,
-        fontSize = 34.sp,
+        fontSize = 57.sp,
+        lineHeight = 64.sp,
+        letterSpacing = (-0.25).sp,
     ),
-
-    h2 = TextStyle(
+    displayMedium = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 45.sp,
+        lineHeight = 52.sp,
+    ),
+    displaySmall = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 36.sp,
+        lineHeight = 44.sp,
+    ),
+    headlineLarge = TextStyle(
+        fontWeight = FontWeight.Bold,
+        fontSize = 32.sp,
+        lineHeight = 40.sp,
+    ),
+    headlineMedium = TextStyle(
         fontWeight = FontWeight.Bold,
         fontSize = 28.sp,
-        lineHeight = 32.sp,
+        lineHeight = 36.sp,
     ),
-
-    h3 = TextStyle(
+    headlineSmall = TextStyle(
         fontWeight = FontWeight.Bold,
         fontSize = 24.sp,
+        lineHeight = 32.sp,
     ),
-
-    h5 = TextStyle(
+    titleLarge = TextStyle(
         fontWeight = FontWeight.Bold,
-        fontSize = 20.sp,
+        fontSize = 22.sp,
+        lineHeight = 28.sp,
     ),
-
-    h6 = TextStyle(
-        fontWeight = FontWeight.Bold,
-        fontSize = 17.sp,
+    titleMedium = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.15.sp,
     ),
-
-    body1 = TextStyle(
+    titleSmall = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp,
+    ),
+    bodyLarge = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 21.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp,
     ),
-
-    body2 = TextStyle(
+    bodyMedium = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.25.sp,
     ),
-
-    button = TextStyle(
-        fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
-    ),
-    caption = TextStyle(
+    bodySmall = TextStyle(
         fontWeight = FontWeight.Normal,
         fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.4.sp,
     ),
-    overline = TextStyle(
-        fontWeight = FontWeight.Normal,
-        fontSize = 8.sp,
+    labelLarge = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp,
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp,
+    ),
+    labelMedium = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 12.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
+    ),
+    labelSmall = TextStyle(
+        fontWeight = FontWeight.Medium,
+        fontSize = 11.sp,
+        lineHeight = 16.sp,
+        letterSpacing = 0.5.sp,
     ),
 )
