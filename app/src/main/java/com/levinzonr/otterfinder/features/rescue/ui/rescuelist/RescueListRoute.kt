@@ -1,4 +1,4 @@
-package com.levinzonr.otterfinder.features.otterfinder
+package com.levinzonr.otterfinder.features.rescue.ui.rescuelist
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -9,19 +9,19 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 
 
 @Composable
-fun OtterFinderRoute(
-    coordinator: OtterFinderCoordinator = rememberOtterFinderCoordinator()
+fun RescueListRoute(
+    coordinator: RescueListCoordinator = rememberRescueListCoordinator()
 ) {
     // State observing and declarations
-    val uiState by coordinator.screenStateFlow.collectAsStateWithLifecycle(OtterFinderState())
+    val uiState by coordinator.screenStateFlow.collectAsStateWithLifecycle(RescueListState())
 
     // UI Actions
-    val actionsHandler: (OtterFinderAction) -> Unit = { action ->
+    val actionsHandler: (RescueListAction) -> Unit = { action ->
         coordinator.handle(action)
     }
 
     // UI Rendering
-    OtterFinderScreen(
+    RescueListScreen(
         state = uiState,
         onAction = actionsHandler
     )

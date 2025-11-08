@@ -1,4 +1,4 @@
-package com.levinzonr.otterfinder.features.otterfinder
+package com.levinzonr.otterfinder.features.rescue.ui.rescuelist
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -8,13 +8,13 @@ import androidx.hilt.navigation.compose.hiltViewModel
  * Screen's coordinator which is responsible for handling actions from the UI layer
  * and one-shot actions based on the new UI state
  */
-class OtterFinderCoordinator(
-    val viewModel: OtterFinderViewModel
+class RescueListCoordinator(
+    val viewModel: RescueListViewModel
 ) {
     val screenStateFlow = viewModel.stateFlow
-    fun handle(action: OtterFinderAction) {
+    fun handle(action: RescueListAction) {
         when (action) {
-            OtterFinderAction.OnClick -> { /* Handle action */
+            RescueListAction.OnClick -> { /* Handle action */
             }
         }
     }
@@ -23,11 +23,11 @@ class OtterFinderCoordinator(
 }
 
 @Composable
-fun rememberOtterFinderCoordinator(
-    viewModel: OtterFinderViewModel = hiltViewModel()
-): OtterFinderCoordinator {
+fun rememberRescueListCoordinator(
+    viewModel: RescueListViewModel = hiltViewModel()
+): RescueListCoordinator {
     return remember(viewModel) {
-        OtterFinderCoordinator(
+        RescueListCoordinator(
             viewModel = viewModel
         )
     }

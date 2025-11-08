@@ -4,17 +4,17 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.levinzonr.otterfinder.features.otterfinder.OtterFinderDestination
-import com.levinzonr.otterfinder.features.otterfinder.OtterFinderRoute
+import com.levinzonr.otterfinder.features.rescue.ui.rescuemap.RescueMapDestination
+import com.levinzonr.otterfinder.features.rescue.ui.rescuemap.RescueMapRoute
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
     NavHost(
         navController = navController,
-        startDestination = OtterFinderDestination,
+        startDestination = RescueMapDestination,
     ) {
-        composable<OtterFinderDestination> {
-            OtterFinderRoute()
+        composable<RescueMapDestination> {
+            RescueMapRoute()
         }
     }
 }

@@ -27,7 +27,6 @@ android_library = { id = "com.android.library", version.ref = "android_gradle" }
 kotlin_android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
-
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 convention-android-library = { id = "convention.android.library" }
@@ -111,7 +110,7 @@ google_accompanist_placeholder_material = { group = "com.google.accompanist", na
 google_accompanist_permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "google_accompanist"}
 
 google-maps-compose = { module = "com.google.maps.android:maps-compose", version = "6.12.0" }
-
+google-maps-compose-utils = { module = "com.google.maps.android:maps-compose-utils", version = "6.12.0"}
 #-------------------------
 # Tests
 #-------------------------

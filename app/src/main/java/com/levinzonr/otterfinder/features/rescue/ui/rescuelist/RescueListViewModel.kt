@@ -1,4 +1,4 @@
-package com.levinzonr.otterfinder.features.otterfinder
+package com.levinzonr.otterfinder.features.rescue.ui.rescuelist
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
@@ -9,14 +9,13 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 @HiltViewModel
-class OtterFinderViewModel @Inject constructor(
+class RescueListViewModel @Inject constructor(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val _stateFlow: MutableStateFlow<OtterFinderState> =
-        MutableStateFlow(OtterFinderState())
+    private val _stateFlow: MutableStateFlow<RescueListState> = MutableStateFlow(RescueListState())
 
-    val stateFlow: StateFlow<OtterFinderState> = _stateFlow.asStateFlow()
+    val stateFlow: StateFlow<RescueListState> = _stateFlow.asStateFlow()
 
 
 }

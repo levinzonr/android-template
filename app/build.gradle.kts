@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.konan.properties.loadProperties
 
 plugins {
     alias(libs.plugins.android.application)
@@ -29,17 +30,17 @@ android {
         }
     }
     productFlavors {
+        val properties = loadProperties("local.properties")
         create("dev") {
             manifestPlaceholders += mapOf("APP_NAME" to "AppDev", "env" to "dev")
             dimension = "default"
             applicationIdSuffix = ".dev"
-            buildConfigField("String", "API_URL", "\"https://reqres.in/api/\"")
+            manifestPlaceholders["MAPS_API_KEY"] = properties["MAPS_API_KEY"].toString()
         }
         create("production") {
             manifestPlaceholders += mapOf("APP_NAME" to "App", "env" to "production")
             dimension = "default"
             //signingConfig signingConfigs.production
-            buildConfigField("String", "API_URL", "\"https://reqres.in/api/\"")
         }
     }
 
@@ -54,6 +55,7 @@ android {
             excludes.add("META-INF/LICENSE-notice.md")
         }
     }
+
 
     buildFeatures {
         compose = true
@@ -89,6 +91,7 @@ dependencies {
     implementation(libs.android.lifecycle.runtime.compose)
     implementation(libs.android.datastore.preferences)
     implementation(libs.google.maps.compose)
+    implementation(libs.google.maps.compose.utils)
 
     // Compose
     implementation(platform(libs.android.compose.bom))
