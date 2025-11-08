@@ -19,7 +19,7 @@ robolectric = "4.16"
 turbine = "1.2.1"
 
 [plugins]
-spotless = { id = "com.diffplug.spotless", version = "6.25.0" }
+spotless = { id = "com.diffplug.spotless", version = "8.0.0" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version = "1.23.8" }
 kotlin_serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 android-application = { id = "com.android.application", version.ref = "android_gradle" }
