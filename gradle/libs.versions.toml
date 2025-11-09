@@ -58,13 +58,13 @@ android_startup = { module = "androidx.startup:startup-runtime", version = "1.1.
 #-------------------------
 # Android - Lifecycle
 #-------------------------
-android_lifecycle_core = { module = "androidx.lifecycle:lifecycle-livedata-core-ktx", version.ref = "lifecycle" }
-android_lifecycle_runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
-android_lifecycle_common = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycle" }
-android_lifecycle_viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
-android_lifecycle_livedata = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
-android_lifecycle_viewmodel_compose = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version.ref = "lifecycle" }
-android_lifecycle_runtime_compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version = "lifecycle" }
+android_2.9.4_core = { module = "androidx.2.9.4:2.9.4-livedata-core-ktx", version.ref = "2.9.4" }
+android_2.9.4_runtime = { module = "androidx.2.9.4:2.9.4-runtime-ktx", version.ref = "2.9.4" }
+android_2.9.4_common = { module = "androidx.2.9.4:2.9.4-common-java8", version.ref = "2.9.4" }
+android_2.9.4_viewmodel = { module = "androidx.2.9.4:2.9.4-viewmodel-ktx", version.ref = "2.9.4" }
+android_2.9.4_livedata = { module = "androidx.2.9.4:2.9.4-livedata-ktx", version.ref = "2.9.4" }
+android_2.9.4_viewmodel_compose = { module = "androidx.2.9.4:2.9.4-viewmodel-compose", version.ref = "2.9.4" }
+android_2.9.4_runtime_compose = { group = "androidx.2.9.4", name = "2.9.4-runtime-compose", version = "2.9.4" }
 #-------------------------
 # Android - Hilt
 #-------------------------
