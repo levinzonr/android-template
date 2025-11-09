@@ -1,16 +1,20 @@
 package com.levinzonr.otterfinder.features.rescue.data
 
-import com.levinzonr.otterfinder.features.otters.domain.repository.OttersRepository
 import com.levinzonr.otterfinder.core.location.Location
+import com.levinzonr.otterfinder.features.otters.domain.repository.OttersRepository
 import com.levinzonr.otterfinder.features.rescue.domain.models.Rescue
 import com.levinzonr.otterfinder.features.rescue.domain.models.RescueType
 import com.levinzonr.otterfinder.features.rescue.domain.repository.RescuesRepository
-import kotlinx.coroutines.flow.first
 import java.util.UUID
-import kotlin.math.*
+import kotlin.math.PI
+import kotlin.math.cos
+import kotlin.math.max
+import kotlin.math.sin
+import kotlin.math.sqrt
+import kotlinx.coroutines.flow.first
 
 class RescuesRepositoryImpl(
-    private val ottersRepository: OttersRepository
+    private val ottersRepository: OttersRepository,
 ) : RescuesRepository {
 
     private val messagesByType = mapOf(
@@ -39,7 +43,7 @@ class RescuesRepositoryImpl(
             "Need someone to help me find the best fishing spot 🎣",
             "Can someone tell me what time it is? I lost track ⏰",
             "Help! I'm too comfy to move, need assistance 🛋️",
-        )
+        ),
     )
 
     override suspend fun get(center: Location, radiusKm: Int): List<Rescue> {
@@ -54,11 +58,11 @@ class RescuesRepositoryImpl(
         return (1..numberOfRescues).map {
             val randomLocation = generateRandomLocationInCircle(center, radiusKm)
             val randomOtter = otters.random()
-            
+
             // Randomly select a rescue type
             val randomType = RescueType.entries.random()
             // Get a random message for that type
-            val randomMessage = messagesByType[randomType]?.random() 
+            val randomMessage = messagesByType[randomType]?.random()
                 ?: "Need help! 🆘"
 
             Rescue(
@@ -66,7 +70,7 @@ class RescuesRepositoryImpl(
                 postedBy = randomOtter,
                 message = randomMessage,
                 location = randomLocation,
-                type = randomType
+                type = randomType,
             )
         }
     }
@@ -95,7 +99,7 @@ class RescuesRepositoryImpl(
 
         return Location(
             latitude = newLat,
-            longitude = newLon
+            longitude = newLon,
         )
     }
 }

@@ -1,10 +1,7 @@
 package com.levinzonr.otterfinder.features.rescue.ui.rescuemap
 
-import androidx.compose.ui.tooling.preview.PreviewParameterProvider
-import com.levinzonr.otterfinder.core.location.Location
 import com.levinzonr.otterfinder.features.rescue.domain.models.Rescue
 import kotlinx.serialization.Serializable
-
 
 /**
  * Object used for a type safe destination to a RescueMap route
@@ -16,7 +13,7 @@ object RescueMapDestination
  * UI State that represents RescueMapScreen
  **/
 data class RescueMapState(
-    val rescues: List<Rescue> = emptyList()
+    val rescues: List<Rescue> = emptyList(),
 )
 
 /**
@@ -27,4 +24,3 @@ data class RescueMapState(
 sealed interface RescueMapAction {
     data object OnClick : RescueMapAction
 }
-

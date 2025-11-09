@@ -9,26 +9,25 @@ import androidx.hilt.navigation.compose.hiltViewModel
  * and one-shot actions based on the new UI state
  */
 class RescueListCoordinator(
-    val viewModel: RescueListViewModel
+    val viewModel: RescueListViewModel,
 ) {
     val screenStateFlow = viewModel.stateFlow
     fun handle(action: RescueListAction) {
         when (action) {
-            RescueListAction.OnClick -> { /* Handle action */
+            RescueListAction.OnClick -> {
+                /* Handle action */
             }
         }
     }
-
-
 }
 
 @Composable
 fun rememberRescueListCoordinator(
-    viewModel: RescueListViewModel = hiltViewModel()
+    viewModel: RescueListViewModel = hiltViewModel(),
 ): RescueListCoordinator {
     return remember(viewModel) {
         RescueListCoordinator(
-            viewModel = viewModel
+            viewModel = viewModel,
         )
     }
 }

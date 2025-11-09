@@ -8,7 +8,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -26,10 +25,10 @@ class LiveLocationState(
 
     private val locationRequest = LocationRequest.Builder(
         Priority.PRIORITY_HIGH_ACCURACY,
-        5000L // 5 seconds
+        5000L,
     ).apply {
-        setMinUpdateIntervalMillis(2000L) // 2 seconds minimum
-        setMaxUpdateDelayMillis(10000L) // 10 seconds maximum
+        setMinUpdateIntervalMillis(2000L)
+        setMaxUpdateDelayMillis(10000L)
     }.build()
 
     private var locationCallback: LocationCallback? = null
@@ -43,7 +42,7 @@ class LiveLocationState(
                 result.lastLocation?.let { androidLocation ->
                     currentLocation = Location(
                         latitude = androidLocation.latitude,
-                        longitude = androidLocation.longitude
+                        longitude = androidLocation.longitude,
                     )
                 }
             }
@@ -52,7 +51,7 @@ class LiveLocationState(
         fusedLocationClient.requestLocationUpdates(
             locationRequest,
             locationCallback!!,
-            context.mainLooper
+            context.mainLooper,
         )
     }
 

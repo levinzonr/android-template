@@ -5,7 +5,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.snapshotFlow
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import com.google.android.gms.maps.CameraUpdate
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.maps.android.compose.CameraPositionState
 import com.google.maps.android.compose.rememberCameraPositionState
@@ -26,7 +25,7 @@ class RescueMapCoordinator(
     val viewModel: RescueMapViewModel,
     val liveLocationState: LiveLocationState,
     val scope: CoroutineScope,
-    val cameraState: CameraPositionState
+    val cameraState: CameraPositionState,
 ) {
     val screenStateFlow = viewModel.stateFlow
 
@@ -41,16 +40,14 @@ class RescueMapCoordinator(
         snapshotFlow { cameraState.position.target }
             .onEach { viewModel.loadRescues(Location(it.latitude, it.longitude)) }
             .launchIn(scope)
-
     }
     fun handle(action: RescueMapAction) {
         when (action) {
-            RescueMapAction.OnClick -> { /* Handle action */
+            RescueMapAction.OnClick -> {
+                /* Handle action */
             }
         }
     }
-
-
 }
 
 @Composable
@@ -58,14 +55,14 @@ fun rememberRescueMapCoordinator(
     viewModel: RescueMapViewModel = hiltViewModel(),
     liveLocationState: LiveLocationState = rememberLiveLocationState(),
     scope: CoroutineScope = rememberCoroutineScope(),
-    cameraState: CameraPositionState = rememberCameraPositionState()
+    cameraState: CameraPositionState = rememberCameraPositionState(),
 ): RescueMapCoordinator {
     return remember(viewModel, liveLocationState) {
         RescueMapCoordinator(
             viewModel = viewModel,
             liveLocationState = liveLocationState,
             scope = scope,
-            cameraState = cameraState
+            cameraState = cameraState,
         )
     }
 }

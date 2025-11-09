@@ -1,8 +1,6 @@
 package com.levinzonr.otterfinder.features.rescue.ui.rescuelist
 
-import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import kotlinx.serialization.Serializable
-
 
 /**
  * Object used for a type safe destination to a RescueList route
@@ -23,4 +21,3 @@ class RescueListState
 sealed interface RescueListAction {
     data object OnClick : RescueListAction
 }
-

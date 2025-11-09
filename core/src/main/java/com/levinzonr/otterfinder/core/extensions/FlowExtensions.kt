@@ -15,7 +15,6 @@ fun tickerFlow(interval: Duration, initialDelay: Duration = Duration.ZERO): Flow
     }
 }
 
-
 fun <T> Flow<T>.onFirst(block: (T) -> Unit): Flow<T> {
     return flow {
         var isFirstConsumed = false

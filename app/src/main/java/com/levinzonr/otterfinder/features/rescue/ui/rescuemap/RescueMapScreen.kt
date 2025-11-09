@@ -12,16 +12,14 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterItem
-import com.google.maps.android.compose.AdvancedMarker
 import com.google.maps.android.compose.CameraPositionState
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MarkerComposable
 import com.google.maps.android.compose.clustering.Clustering
 import com.google.maps.android.compose.rememberCameraPositionState
-import com.google.maps.android.compose.rememberTileOverlayState
 import com.google.maps.android.compose.rememberUpdatedMarkerState
-import com.levinzonr.otterfinder.features.otters.ui.OtterAvatar
 import com.levinzonr.otterfinder.core.location.Location
+import com.levinzonr.otterfinder.features.otters.ui.OtterAvatar
 import com.levinzonr.otterfinder.features.rescue.domain.models.Rescue
 
 @Composable
@@ -29,22 +27,20 @@ fun RescueMapScreen(
     state: RescueMapState,
     cameraPositionState: CameraPositionState,
     userLocation: Location?,
-    onAction: (RescueMapAction) -> Unit
+    onAction: (RescueMapAction) -> Unit,
 ) {
     GoogleMap(
         cameraPositionState = cameraPositionState,
     ) {
-
         Clustering(
             items = state.rescues.map { RescueClusterItem(it) },
             clusterItemContent = {
                 OtterAvatar(
                     otter = it.rescue.postedBy,
-                    modifier = Modifier.size(32.dp)
+                    modifier = Modifier.size(32.dp),
                 )
-            }
+            },
         )
-
 
         MarkerComposable(
             state = rememberUpdatedMarkerState(),
@@ -70,13 +66,13 @@ class RescueClusterItem(val rescue: Rescue) : ClusterItem {
 @Preview(name = "RescueMap")
 private fun RescueMapScreenPreview(
     @PreviewParameter(RescueMapStatePreviewParameterProvider::class)
-    state: RescueMapState
+    state: RescueMapState,
 ) {
     RescueMapScreen(
         state = state,
         cameraPositionState = rememberCameraPositionState(),
         userLocation = null,
-        onAction = {}
+        onAction = {},
     )
 }
 

@@ -6,10 +6,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 
 @Composable
-fun RescueListScreen(
-    state: RescueListState,
-    onAction: (RescueListAction) -> Unit
-) {
+fun RescueListScreen(state: RescueListState, onAction: (RescueListAction) -> Unit) {
     // TODO UI Rendering
 }
 
@@ -17,11 +14,11 @@ fun RescueListScreen(
 @Preview(name = "RescueList")
 private fun RescueListScreenPreview(
     @PreviewParameter(RescueListStatePreviewParameterProvider::class)
-    state: RescueListState
+    state: RescueListState,
 ) {
     RescueListScreen(
         state = state,
-        onAction = {}
+        onAction = {},
     )
 }
 

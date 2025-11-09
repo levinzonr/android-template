@@ -6,12 +6,10 @@ import com.levinzonr.otterfinder.features.rescue.domain.repository.RescuesReposi
 import javax.inject.Inject
 
 class GetRescuesAtLocationUseCase @Inject constructor(
-    private val repository: RescuesRepository
+    private val repository: RescuesRepository,
 ) {
 
-    suspend operator fun invoke(
-        location: Location
-    ) = suspendRunCatching {
+    suspend operator fun invoke(location: Location) = suspendRunCatching {
         repository.get(location, 10)
     }
 }

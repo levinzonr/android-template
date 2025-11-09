@@ -11,7 +11,7 @@ data class Otter(
         val Mock = Otter(
             name = "Leslie",
             imageResource = R.drawable.ill_otter_bowtie,
-            id = "id"
+            id = "id",
         )
     }
 }
