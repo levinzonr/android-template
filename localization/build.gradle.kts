@@ -7,7 +7,7 @@ plugins {
 
 
 android {
-    namespace = "com.levinzonr.template.android.localization"
+    namespace = "com.levinzonr.otterfinder.localization"
 
 }
 

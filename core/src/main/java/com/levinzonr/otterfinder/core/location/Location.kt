@@ -1,0 +1,13 @@
+package com.levinzonr.otterfinder.core.location
+
+data class Location(
+    val latitude: Double,
+    val longitude: Double,
+) {
+    companion object {
+        val Mock = Location(
+            latitude = 45.0703,
+            longitude = 7.6869,
+        )
+    }
+}

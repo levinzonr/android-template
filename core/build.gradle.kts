@@ -10,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "com.levinzonr.template.android.core"
+    namespace = "com.levinzonr.otterfinder.core"
     buildFeatures.compose = true
 }
 
@@ -26,6 +26,7 @@ dependencies {
 
     // Android
     implementation(libs.android.datastore.preferences)
+    implementation(libs.google.play.services.location)
 
     // Compose
     implementation(platform(libs.android.compose.bom))
