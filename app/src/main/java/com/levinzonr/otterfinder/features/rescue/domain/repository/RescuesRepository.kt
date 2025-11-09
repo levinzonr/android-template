@@ -1,6 +1,6 @@
 package com.levinzonr.otterfinder.features.rescue.domain.repository
 
-import com.levinzonr.otterfinder.features.rescue.domain.models.Location
+import com.levinzonr.otterfinder.core.location.Location
 import com.levinzonr.otterfinder.features.rescue.domain.models.Rescue
 
 interface RescuesRepository {

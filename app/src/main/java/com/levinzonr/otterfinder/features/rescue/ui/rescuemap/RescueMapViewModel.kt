@@ -3,7 +3,7 @@ package com.levinzonr.otterfinder.features.rescue.ui.rescuemap
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.levinzonr.otterfinder.features.rescue.domain.models.Location
+import com.levinzonr.otterfinder.core.location.Location
 import com.levinzonr.otterfinder.features.rescue.domain.usecase.GetRescuesAtLocationUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

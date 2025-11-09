@@ -10,6 +10,7 @@ lifecycle = "2.9.4"
 navigation = "2.9.6"
 datastore = "1.1.7"
 google_accompanist = "0.36.0"
+play_services_location = "21.3.0"
 androidx-appcompat = "1.7.1"
 androidx-core = "1.17.0"
 android_gradle = "8.13.0"
@@ -111,6 +112,7 @@ google_accompanist_permissions = { module = "com.google.accompanist:accompanist-
 
 google-maps-compose = { module = "com.google.maps.android:maps-compose", version = "6.12.0" }
 google-maps-compose-utils = { module = "com.google.maps.android:maps-compose-utils", version = "6.12.0"}
+google_play_services_location = { module = "com.google.android.gms:play-services-location", version.ref = "play_services_location" }
 #-------------------------
 # Tests
 #-------------------------

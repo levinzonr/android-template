@@ -1,9 +1,9 @@
 package com.levinzonr.otterfinder.features.rescue.data
 
-import com.levinzonr.otterfinder.features.otters.domain.models.Otter
 import com.levinzonr.otterfinder.features.otters.domain.repository.OttersRepository
-import com.levinzonr.otterfinder.features.rescue.domain.models.Location
+import com.levinzonr.otterfinder.core.location.Location
 import com.levinzonr.otterfinder.features.rescue.domain.models.Rescue
+import com.levinzonr.otterfinder.features.rescue.domain.models.RescueType
 import com.levinzonr.otterfinder.features.rescue.domain.repository.RescuesRepository
 import kotlinx.coroutines.flow.first
 import java.util.UUID
@@ -13,27 +13,33 @@ class RescuesRepositoryImpl(
     private val ottersRepository: OttersRepository
 ) : RescuesRepository {
 
-    private val rescueMessages = listOf(
-        "Help! My favorite toy broke and I need someone to fix it 🧸",
-        "Looking for a cozy spot to relax, any suggestions? 🏖️",
-        "Can someone tell me what time it is? I lost track ⏰",
-        "Need help finding the best place to take a nap 😴",
-        "My snack stash ran out, anyone have extra? 🐟",
-        "Looking for a friend to play hide and seek with 🎮",
-        "Lost my way, can someone help me get back home? 🏠",
-        "Need someone to help me count my pebbles collection 🪨",
-        "Looking for the perfect spot to watch the sunset 🌅",
-        "Can someone help me organize my shell collection? 🐚",
-        "Need a buddy to go swimming with! 🏊",
-        "Help! I can't decide what to have for lunch 🍽️",
-        "Looking for someone to share stories with 📖",
-        "Need help finding the warmest rock to sunbathe on ☀️",
-        "Can someone help me practice my backstroke? 🏊‍♂️",
-        "Looking for a friend to explore the river with 🌊",
-        "Help! I'm too comfy to move, need assistance 🛋️",
-        "Need someone to help me find the best fishing spot 🎣",
-        "Can someone tell me if it's nap time yet? 😴",
-        "Looking for a cozy friend to cuddle with 🫂"
+    private val messagesByType = mapOf(
+        RescueType.ToyTrouble to listOf(
+            "Help! My favorite toy broke and I need someone to fix it 🧸",
+            "Need someone to help me count my pebbles collection 🪨",
+            "Can someone help me organize my shell collection? 🐚",
+            "Help! I can't decide what to have for lunch 🍽️",
+        ),
+        RescueType.CozySpot to listOf(
+            "Looking for a cozy spot to relax, any suggestions? 🏖️",
+            "Need help finding the best place to take a nap 😴",
+            "Looking for the perfect spot to watch the sunset 🌅",
+            "Need help finding the warmest rock to sunbathe on ☀️",
+            "Can someone tell me if it's nap time yet? 😴",
+            "Lost my way, can someone help me get back home? 🏠",
+        ),
+        RescueType.PlayDate to listOf(
+            "Looking for a friend to play hide and seek with 🎮",
+            "Need a buddy to go swimming with! 🏊",
+            "Looking for someone to share stories with 📖",
+            "Can someone help me practice my backstroke? 🏊‍♂️",
+            "Looking for a friend to explore the river with 🌊",
+            "Looking for a cozy friend to cuddle with 🫂",
+            "My snack stash ran out, anyone have extra? 🐟",
+            "Need someone to help me find the best fishing spot 🎣",
+            "Can someone tell me what time it is? I lost track ⏰",
+            "Help! I'm too comfy to move, need assistance 🛋️",
+        )
     )
 
     override suspend fun get(center: Location, radiusKm: Int): List<Rescue> {
@@ -48,13 +54,19 @@ class RescuesRepositoryImpl(
         return (1..numberOfRescues).map {
             val randomLocation = generateRandomLocationInCircle(center, radiusKm)
             val randomOtter = otters.random()
-            val randomMessage = rescueMessages.random()
+            
+            // Randomly select a rescue type
+            val randomType = RescueType.entries.random()
+            // Get a random message for that type
+            val randomMessage = messagesByType[randomType]?.random() 
+                ?: "Need help! 🆘"
 
             Rescue(
                 id = UUID.randomUUID().toString(),
                 postedBy = randomOtter,
                 message = randomMessage,
-                location = randomLocation
+                location = randomLocation,
+                type = randomType
             )
         }
     }

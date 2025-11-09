@@ -23,7 +23,10 @@ fun RescueMapRoute(
     // UI Rendering
     RescueMapScreen(
         state = uiState,
-        onAction = actionsHandler
+        onAction = actionsHandler,
+        cameraPositionState = coordinator.cameraState,
+        userLocation = coordinator.liveLocationState.currentLocation
+
     )
 }
 

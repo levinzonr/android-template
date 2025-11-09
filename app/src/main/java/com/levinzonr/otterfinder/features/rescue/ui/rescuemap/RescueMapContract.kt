@@ -1,6 +1,7 @@
 package com.levinzonr.otterfinder.features.rescue.ui.rescuemap
 
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import com.levinzonr.otterfinder.core.location.Location
 import com.levinzonr.otterfinder.features.rescue.domain.models.Rescue
 import kotlinx.serialization.Serializable
 

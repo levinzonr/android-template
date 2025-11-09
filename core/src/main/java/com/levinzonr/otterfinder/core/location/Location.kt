@@ -1,4 +1,4 @@
-package com.levinzonr.otterfinder.features.rescue.domain.models
+package com.levinzonr.otterfinder.core.location
 
 data class Location(
     val latitude: Double,

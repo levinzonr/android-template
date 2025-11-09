@@ -1,7 +1,7 @@
 package com.levinzonr.otterfinder.features.rescue.domain.usecase
 
 import com.levinzonr.otterfinder.core.extensions.suspendRunCatching
-import com.levinzonr.otterfinder.features.rescue.domain.models.Location
+import com.levinzonr.otterfinder.core.location.Location
 import com.levinzonr.otterfinder.features.rescue.domain.repository.RescuesRepository
 import javax.inject.Inject
 

@@ -26,6 +26,7 @@ dependencies {
 
     // Android
     implementation(libs.android.datastore.preferences)
+    implementation(libs.google.play.services.location)
 
     // Compose
     implementation(platform(libs.android.compose.bom))

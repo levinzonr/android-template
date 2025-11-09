@@ -1,29 +1,39 @@
 package com.levinzonr.otterfinder.features.rescue.ui.rescuemap
 
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import com.google.android.gms.maps.model.LatLng
 import com.google.maps.android.clustering.ClusterItem
+import com.google.maps.android.compose.AdvancedMarker
+import com.google.maps.android.compose.CameraPositionState
 import com.google.maps.android.compose.GoogleMap
 import com.google.maps.android.compose.MarkerComposable
 import com.google.maps.android.compose.clustering.Clustering
+import com.google.maps.android.compose.rememberCameraPositionState
 import com.google.maps.android.compose.rememberTileOverlayState
 import com.google.maps.android.compose.rememberUpdatedMarkerState
 import com.levinzonr.otterfinder.features.otters.ui.OtterAvatar
-import com.levinzonr.otterfinder.features.rescue.domain.models.Location
+import com.levinzonr.otterfinder.core.location.Location
 import com.levinzonr.otterfinder.features.rescue.domain.models.Rescue
 
 @Composable
 fun RescueMapScreen(
     state: RescueMapState,
+    cameraPositionState: CameraPositionState,
+    userLocation: Location?,
     onAction: (RescueMapAction) -> Unit
 ) {
-    GoogleMap {
+    GoogleMap(
+        cameraPositionState = cameraPositionState,
+    ) {
 
         Clustering(
             items = state.rescues.map { RescueClusterItem(it) },
@@ -35,6 +45,12 @@ fun RescueMapScreen(
             }
         )
 
+
+        MarkerComposable(
+            state = rememberUpdatedMarkerState(),
+        ) {
+            Box(Modifier.background(Color.Red).size(32.dp))
+        }
     }
 }
 
@@ -58,6 +74,8 @@ private fun RescueMapScreenPreview(
 ) {
     RescueMapScreen(
         state = state,
+        cameraPositionState = rememberCameraPositionState(),
+        userLocation = null,
         onAction = {}
     )
 }
